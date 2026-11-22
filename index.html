@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,34 +26,27 @@
   <!-- Google Fonts: Plus Jakarta Sans & Instrument Serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-
     /* Subtle architectural dot grid */
     .bg-dot-pattern {
       background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
       background-size: 24px 24px;
     }
-
     .dark .bg-dot-pattern {
       background-image: radial-gradient(#1e293b 1px, transparent 1px);
       background-size: 24px 24px;
     }
-
     /* Custom scrollbar for chat modal */
     .chat-scroll::-webkit-scrollbar {
       width: 5px;
     }
-
     .chat-scroll::-webkit-scrollbar-track {
       background: transparent;
     }
-
     .chat-scroll::-webkit-scrollbar-thumb {
       background: rgba(148, 163, 184, 0.35);
       border-radius: 9999px;
@@ -62,31 +54,25 @@
   </style>
   <script>
     // Apply saved theme immediately to prevent flash
-    if (localStorage.getItem('hans_ai_theme') === 'dark' ||
-      (!localStorage.getItem('hans_ai_theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (localStorage.getItem('hans_ai_theme') === 'dark' || 
+       (!localStorage.getItem('hans_ai_theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   </script>
 </head>
-
-<body
-  class="bg-white dark:bg-[#090D16] text-slate-800 dark:text-slate-100 min-h-screen flex flex-col justify-between transition-colors duration-300 relative overflow-x-hidden">
+<body class="bg-white dark:bg-[#090D16] text-slate-800 dark:text-slate-100 min-h-screen flex flex-col justify-between transition-colors duration-300 relative overflow-x-hidden">
 
   <!-- AMBIENT BACKGROUND DECORATION -->
   <div class="fixed inset-0 bg-dot-pattern opacity-60 dark:opacity-50 pointer-events-none z-0"></div>
-  <div
-    class="fixed top-[-120px] left-1/2 -translate-x-1/2 w-[680px] h-[340px] bg-gradient-to-r from-emerald-400/15 via-cyan-400/15 to-indigo-500/15 dark:from-emerald-500/10 dark:via-cyan-500/10 dark:to-indigo-500/15 blur-3xl rounded-full pointer-events-none z-0">
-  </div>
+  <div class="fixed top-[-120px] left-1/2 -translate-x-1/2 w-[680px] h-[340px] bg-gradient-to-r from-emerald-400/15 via-cyan-400/15 to-indigo-500/15 dark:from-emerald-500/10 dark:via-cyan-500/10 dark:to-indigo-500/15 blur-3xl rounded-full pointer-events-none z-0"></div>
 
   <!-- TOP NAVIGATION BAR -->
-  <header
-    class="relative z-10 max-w-6xl w-full mx-auto px-4 sm:px-6 pt-5 pb-2 flex flex-wrap items-center justify-between gap-3">
+  <header class="relative z-10 max-w-6xl w-full mx-auto px-4 sm:px-6 pt-5 pb-2 flex flex-wrap items-center justify-between gap-3">
     <!-- Left Brand Pill -->
     <div class="flex items-center gap-2.5">
-      <div
-        class="w-9 h-9 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center font-extrabold text-sm shadow-sm">
+      <div class="w-9 h-9 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center font-extrabold text-sm shadow-sm">
         H<span class="text-emerald-400 dark:text-emerald-600">.</span>
       </div>
       <div class="leading-tight">
@@ -97,30 +83,24 @@
 
     <!-- Right Status & Theme Toggle -->
     <div class="flex items-center gap-2.5">
-      <div
-        class="inline-flex items-center gap-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3.5 py-2 rounded-full border border-slate-200/80 dark:border-slate-800 shadow-sm text-xs font-semibold text-slate-700 dark:text-slate-200">
+      <div class="inline-flex items-center gap-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3.5 py-2 rounded-full border border-slate-200/80 dark:border-slate-800 shadow-sm text-xs font-semibold text-slate-700 dark:text-slate-200">
         <span class="relative flex h-2.5 w-2.5">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
         </span>
-        <span>8 Agent AI Aktif • 24/7</span>
+        <span>6 Agent AI Aktif • 24/7</span>
       </div>
 
       <!-- Light / Dark Mode Switch -->
       <button id="themeToggle" onclick="toggleTheme()" aria-label="Ganti Tema Light/Dark"
         class="p-2.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm transition-all">
         <!-- Sun Icon (shown in dark mode) -->
-        <svg id="sunIcon" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor"
-          viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-          </path>
+        <svg id="sunIcon" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
         </svg>
         <!-- Moon Icon (shown in light mode) -->
-        <svg id="moonIcon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor"
-          viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        <svg id="moonIcon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
         </svg>
       </button>
     </div>
@@ -131,373 +111,198 @@
 
     <!-- HERO HEADER -->
     <div class="text-center max-w-2xl mx-auto mb-8">
-      <div
-        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/70 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 text-[11px] font-bold tracking-wider uppercase mb-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/70 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 text-[11px] font-bold tracking-wider uppercase mb-4">
         <span>Consultation With</span>
       </div>
 
-      <h1
-        class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.15]">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.15]">
         Han’s Agent AI
-        <span
-          class="block font-serif italic font-normal text-3xl sm:text-4xl md:text-[44px] text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 mt-1">
+        <span class="block font-serif italic font-normal text-3xl sm:text-4xl md:text-[44px] text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 mt-1">
           Primary Needs
         </span>
       </h1>
 
       <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 mt-4 leading-relaxed">
-        Pilih unit layanan sesuai kebutuhan Anda untuk langsung terhubung dan berkonsultasi dengan <strong
-          class="text-slate-800 dark:text-slate-200 font-semibold">Karyawan Agent AI spesialis</strong> kami.
+        Pilih unit layanan sesuai kebutuhan Anda untuk langsung terhubung dan berkonsultasi dengan <strong class="text-slate-800 dark:text-slate-200 font-semibold">Karyawan Agent AI spesialis</strong> kami.
       </p>
     </div>
 
     <!-- CATEGORY FILTER PILLS -->
     <div class="flex flex-wrap items-center justify-center gap-2 mb-8" id="filterBar">
-      <button onclick="filterCards('all', this)"
-        class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold transition-all bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm">
-        Semua Layanan (8)
+      <button onclick="filterCards('all', this)" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold transition-all bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm">
+        Semua Layanan (6)
       </button>
-      <button onclick="filterCards('finance-property', this)"
-        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700">
+      <button onclick="filterCards('finance-property', this)" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700">
         Keuangan & Properti
       </button>
-      <button onclick="filterCards('education', this)"
-        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700">
+      <button onclick="filterCards('education', this)" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700">
         Edukasi & Skill
       </button>
-      <button onclick="filterCards('travel', this)"
-        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700">
+      <button onclick="filterCards('travel', this)" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700">
         Umrah & Haji
       </button>
-      <button onclick="filterCards('tech', this)"
-        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700">
-        Gadget, Laptop & Servis
+      <button onclick="filterCards('tech', this)" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700">
+        Digital Agency & IT Solution
       </button>
     </div>
 
-    <!-- 8 BUSINESS CARDS GRID -->
-    <div id="cardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full mb-10">
+    <!-- 6 BUSINESS CARDS GRID (3x2 SYMMETRICAL DESKTOP LAYOUT) -->
+    <div id="cardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-10">
 
       <!-- 01. Prudential -->
-      <div data-category="finance-property"
-        class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-rose-300/80 dark:hover:border-rose-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-        <div
-          class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-rose-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity">
-        </div>
+      <div data-category="finance-property" class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-rose-300/80 dark:hover:border-rose-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-rose-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div>
           <div class="flex justify-between items-center mb-5">
-            <span
-              class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">01</span>
+            <span class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">01</span>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-rose-600 dark:text-rose-400">
               <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Proteksi
             </span>
           </div>
-          <div
-            class="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-500/10 border border-rose-100 dark:border-rose-500/20 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-              </path>
-            </svg>
+          <div class="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-500/10 border border-rose-100 dark:border-rose-500/20 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
           </div>
           <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Prudential</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Asuransi Jiwa, Kesehatan &
-            Perencanaan Keuangan Keluarga</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Asuransi Jiwa, Kesehatan & Perencanaan Keuangan Keluarga</p>
           <div class="flex flex-wrap gap-1.5 mb-6">
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Konvensional</span>
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Syariah</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Konvensional</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Syariah</span>
           </div>
         </div>
-        <button onclick="openAIChat('prudential')"
-          class="w-full py-2.5 px-4 bg-slate-900 hover:bg-rose-600 dark:bg-slate-800 dark:hover:bg-rose-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
+        <button onclick="openAIChat('prudential')" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-rose-600 dark:bg-slate-800 dark:hover:bg-rose-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
           <span>Konsultasi AI</span>
           <span class="group-hover/btn:translate-x-0.5 transition-transform">→</span>
         </button>
       </div>
 
       <!-- 02. Brighton Real Estate -->
-      <div data-category="finance-property"
-        class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-amber-300/80 dark:hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-        <div
-          class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity">
-        </div>
+      <div data-category="finance-property" class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-amber-300/80 dark:hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div>
           <div class="flex justify-between items-center mb-5">
-            <span
-              class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">02</span>
+            <span class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">02</span>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-amber-600 dark:text-amber-400">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Properti
             </span>
           </div>
-          <div
-            class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-500/10 border border-amber-100 dark:border-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h5m-5 0V9m0 4h.01M11 13h.01M13 13h.01M11 17h.01M13 17h.01">
-              </path>
-            </svg>
+          <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-500/10 border border-amber-100 dark:border-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h5m-5 0V9m0 4h.01M11 13h.01M13 13h.01M11 17h.01M13 17h.01"></path></svg>
           </div>
           <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Brighton Real Estate</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Konsultan Jual, Beli, Sewa &
-            Investasi Properti Terpercaya</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Konsultan Jual, Beli, Sewa & Investasi Properti Terpercaya</p>
           <div class="flex flex-wrap gap-1.5 mb-6">
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Titip
-              Jual</span>
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">KPR
-              & Aset</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Titip Jual</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">KPR & Aset</span>
           </div>
         </div>
-        <button onclick="openAIChat('brighton')"
-          class="w-full py-2.5 px-4 bg-slate-900 hover:bg-amber-600 dark:bg-slate-800 dark:hover:bg-amber-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
+        <button onclick="openAIChat('brighton')" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-amber-600 dark:bg-slate-800 dark:hover:bg-amber-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
           <span>Konsultasi AI</span>
           <span class="group-hover/btn:translate-x-0.5 transition-transform">→</span>
         </button>
       </div>
 
       <!-- 03. Generation Academy -->
-      <div data-category="education"
-        class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-emerald-300/80 dark:hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-        <div
-          class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity">
-        </div>
+      <div data-category="education" class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-emerald-300/80 dark:hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div>
           <div class="flex justify-between items-center mb-5">
-            <span
-              class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">03</span>
-            <span
-              class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+            <span class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">03</span>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Edukasi
             </span>
           </div>
-          <div
-            class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5z">
-              </path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
-              </path>
-            </svg>
+          <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
           </div>
           <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Generation Academy</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Bimbingan Belajar Privat 1-on-1 &
-            Personalized Learning</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Bimbingan Belajar Privat 1-on-1 & Personalized Learning</p>
           <div class="flex flex-wrap gap-1.5 mb-6">
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">UTBK
-              & OSN</span>
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Coding
-              & Sains</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">UTBK & OSN</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Coding & Sains</span>
           </div>
         </div>
-        <button onclick="openAIChat('generation')"
-          class="w-full py-2.5 px-4 bg-slate-900 hover:bg-emerald-600 dark:bg-slate-800 dark:hover:bg-emerald-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
+        <button onclick="openAIChat('generation')" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-emerald-600 dark:bg-slate-800 dark:hover:bg-emerald-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
           <span>Konsultasi AI</span>
           <span class="group-hover/btn:translate-x-0.5 transition-transform">→</span>
         </button>
       </div>
 
       <!-- 04. Tanur Muthmainnah -->
-      <div data-category="travel"
-        class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-teal-300/80 dark:hover:border-teal-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-        <div
-          class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-teal-400 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity">
-        </div>
+      <div data-category="travel" class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-teal-300/80 dark:hover:border-teal-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-teal-400 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div>
           <div class="flex justify-between items-center mb-5">
-            <span
-              class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">04</span>
+            <span class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">04</span>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-teal-600 dark:text-teal-400">
               <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> Ibadah
             </span>
           </div>
-          <div
-            class="w-12 h-12 rounded-2xl bg-teal-50 dark:bg-teal-500/10 border border-teal-100 dark:border-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
-            </svg>
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 dark:bg-teal-500/10 border border-teal-100 dark:border-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
           </div>
           <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Tanur Muthmainnah</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Travel Umrah & Haji Khusus Resmi
-            Berizin Kemenag</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Travel Umrah & Haji Khusus Resmi Berizin Kemenag</p>
           <div class="flex flex-wrap gap-1.5 mb-6">
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Paket
-              Umrah</span>
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Haji
-              Plus</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Paket Umrah</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Haji Plus</span>
           </div>
         </div>
-        <button onclick="openAIChat('tanur')"
-          class="w-full py-2.5 px-4 bg-slate-900 hover:bg-teal-600 dark:bg-slate-800 dark:hover:bg-teal-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
+        <button onclick="openAIChat('tanur')" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-teal-600 dark:bg-slate-800 dark:hover:bg-teal-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
           <span>Konsultasi AI</span>
           <span class="group-hover/btn:translate-x-0.5 transition-transform">→</span>
         </button>
       </div>
 
       <!-- 05. Nongkrong Academy -->
-      <div data-category="education"
-        class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-indigo-300/80 dark:hover:border-indigo-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-        <div
-          class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-indigo-500 to-violet-500 opacity-0 group-hover:opacity-100 transition-opacity">
-        </div>
+      <div data-category="education" class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-indigo-300/80 dark:hover:border-indigo-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-indigo-500 to-violet-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div>
           <div class="flex justify-between items-center mb-5">
-            <span
-              class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">05</span>
-            <span
-              class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-indigo-600 dark:text-indigo-400">
+            <span class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">05</span>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-indigo-600 dark:text-indigo-400">
               <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> Digital Skill
             </span>
           </div>
-          <div
-            class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-100 dark:border-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z">
-              </path>
-            </svg>
+          <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-100 dark:border-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
           </div>
           <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Nongkrong Academy</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Akademi Skill Digital, Content
-            Creator & Bisnis Praktis</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Akademi Skill Digital, Content Creator & Bisnis Praktis</p>
           <div class="flex flex-wrap gap-1.5 mb-6">
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Entrepreneur</span>
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Creator</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Entrepreneur</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Creator</span>
           </div>
         </div>
-        <button onclick="openAIChat('nongkrong')"
-          class="w-full py-2.5 px-4 bg-slate-900 hover:bg-indigo-600 dark:bg-slate-800 dark:hover:bg-indigo-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
+        <button onclick="openAIChat('nongkrong')" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-indigo-600 dark:bg-slate-800 dark:hover:bg-indigo-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
           <span>Konsultasi AI</span>
           <span class="group-hover/btn:translate-x-0.5 transition-transform">→</span>
         </button>
       </div>
 
-      <!-- 06. Sinar Mutiara Cell -->
-      <div data-category="tech"
-        class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-sky-300/80 dark:hover:border-sky-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-        <div
-          class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity">
-        </div>
+      <!-- 06. EXA.ID -->
+      <div data-category="tech" class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-blue-300/80 dark:hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div>
           <div class="flex justify-between items-center mb-5">
-            <span
-              class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">06</span>
-            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-sky-600 dark:text-sky-400">
-              <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Gadget
-            </span>
-          </div>
-          <div
-            class="w-12 h-12 rounded-2xl bg-sky-50 dark:bg-sky-500/10 border border-sky-100 dark:border-sky-500/20 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-            </svg>
-          </div>
-          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Sinar Mutiara Cell</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Pusat Penjualan Smartphone,
-            Aksesoris & Smart TV Digital</p>
-          <div class="flex flex-wrap gap-1.5 mb-6">
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Smartphone</span>
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Smart
-              TV</span>
-          </div>
-        </div>
-        <button onclick="openAIChat('sinar')"
-          class="w-full py-2.5 px-4 bg-slate-900 hover:bg-sky-600 dark:bg-slate-800 dark:hover:bg-sky-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
-          <span>Konsultasi AI</span>
-          <span class="group-hover/btn:translate-x-0.5 transition-transform">→</span>
-        </button>
-      </div>
-
-      <!-- 07. Pusat Laptop Nusantara -->
-      <div data-category="tech"
-        class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-blue-300/80 dark:hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-        <div
-          class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity">
-        </div>
-        <div>
-          <div class="flex justify-between items-center mb-5">
-            <span
-              class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">07</span>
+            <span class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">06</span>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-blue-600 dark:text-blue-400">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Komputer
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> IT & Digital
             </span>
           </div>
-          <div
-            class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+          <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-              </path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
             </svg>
           </div>
-          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Pusat Laptop Nusantara</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Retail & Pengadaan Laptop
-            Bergaransi (New & Second)</p>
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">EXA.ID</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Digital Agency & IT Solution (Hardware, Software, and Network)</p>
           <div class="flex flex-wrap gap-1.5 mb-6">
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Unit
-              Baru</span>
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Second
-              Liked-New</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Hardware</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Software</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Network</span>
           </div>
         </div>
-        <button onclick="openAIChat('laptop')"
-          class="w-full py-2.5 px-4 bg-slate-900 hover:bg-blue-600 dark:bg-slate-800 dark:hover:bg-blue-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
-          <span>Konsultasi AI</span>
-          <span class="group-hover/btn:translate-x-0.5 transition-transform">→</span>
-        </button>
-      </div>
-
-      <!-- 08. IT Repair Hardware -->
-      <div data-category="tech"
-        class="service-card group bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/80 dark:border-slate-800/90 shadow-soft hover:shadow-xl hover:-translate-y-1 hover:border-cyan-300/80 dark:hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-        <div
-          class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity">
-        </div>
-        <div>
-          <div class="flex justify-between items-center mb-5">
-            <span
-              class="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md">08</span>
-            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-cyan-600 dark:text-cyan-400">
-              <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span> Teknisi
-            </span>
-          </div>
-          <div
-            class="w-12 h-12 rounded-2xl bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-100 dark:border-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
-              </path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-          </div>
-          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">IT Repair Hardware</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Servis Hardware, Upgrade &
-            Perbaikan Laptop / Smartphone</p>
-          <div class="flex flex-wrap gap-1.5 mb-6">
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Laptop
-              & PC</span>
-            <span
-              class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/70">Smartphone</span>
-          </div>
-        </div>
-        <button onclick="openAIChat('repair')"
-          class="w-full py-2.5 px-4 bg-slate-900 hover:bg-cyan-600 dark:bg-slate-800 dark:hover:bg-cyan-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
+        <button onclick="openAIChat('exaid')" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-blue-600 dark:bg-slate-800 dark:hover:bg-blue-600 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 group/btn">
           <span>Konsultasi AI</span>
           <span class="group-hover/btn:translate-x-0.5 transition-transform">→</span>
         </button>
@@ -507,60 +312,49 @@
   </main>
 
   <!-- FOOTER -->
-  <footer
-    class="relative z-10 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 dark:text-slate-500 gap-3">
+  <footer class="relative z-10 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 dark:text-slate-500 gap-3">
     <div class="flex items-center gap-2">
       <strong class="text-slate-700 dark:text-slate-300 font-bold">Han's Agent AI</strong>
       <span>•</span>
       <span>Multi-Business AI Customer Service Ecosystem</span>
     </div>
-    <div
-      class="inline-flex items-center gap-2 bg-slate-50 dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 px-3 py-1.5 rounded-full text-slate-600 dark:text-slate-400 font-medium">
+    <div class="inline-flex items-center gap-2 bg-slate-50 dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 px-3 py-1.5 rounded-full text-slate-600 dark:text-slate-400 font-medium">
       <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-      <span>Interactive AI Agent Router v2.0</span>
+      <span>Interactive AI Agent Router v2.1</span>
     </div>
   </footer>
 
   <!-- INTERACTIVE AI CHAT MODAL -->
-  <div id="aiModal" onclick="handleBackdropClick(event)"
-    class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50 transition-opacity">
-    <div
-      class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800 flex flex-col transform transition-all">
-
+  <div id="aiModal" onclick="handleBackdropClick(event)" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50 transition-opacity">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800 flex flex-col transform transition-all">
+      
       <!-- Modal Header -->
-      <div
-        class="px-6 py-4 bg-slate-50/80 dark:bg-slate-800/60 border-b border-slate-200/70 dark:border-slate-800 flex justify-between items-center">
+      <div class="px-6 py-4 bg-slate-50/80 dark:bg-slate-800/60 border-b border-slate-200/70 dark:border-slate-800 flex justify-between items-center">
         <div class="flex items-center gap-3">
           <div class="relative">
-            <div id="modalAvatar"
-              class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-bold text-sm flex items-center justify-center shadow-sm">
+            <div id="modalAvatar" class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-bold text-sm flex items-center justify-center shadow-sm">
               AI
             </div>
-            <span
-              class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+            <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
           </div>
           <div>
             <h4 id="modalAgentName" class="font-bold text-slate-900 dark:text-white text-sm">Agent AI</h4>
-            <p id="modalAgentDiv" class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Divisi Spesialis •
-              Online</p>
+            <p id="modalAgentDiv" class="text-[11px] text-slate-500 dark:text-slate-400 font-medium line-clamp-1">Divisi Spesialis • Online</p>
           </div>
         </div>
-        <button onclick="closeAIChat()"
-          class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-700/60 transition-colors text-lg font-bold">
+        <button onclick="closeAIChat()" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-700/60 transition-colors text-lg font-bold">
           &times;
         </button>
       </div>
 
       <!-- Chat Simulation Area -->
-      <div id="chatMessages"
-        class="p-5 bg-white dark:bg-slate-950/50 h-[220px] overflow-y-auto chat-scroll flex flex-col gap-3 text-xs">
+      <div id="chatMessages" class="p-5 bg-white dark:bg-slate-950/50 h-[220px] overflow-y-auto chat-scroll flex flex-col gap-3 text-xs">
         <!-- Populated dynamically via JS -->
       </div>
 
       <!-- Quick Prompt Chips -->
       <div class="px-5 pt-3 pb-1 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800/80">
-        <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">Pertanyaan
-          Cepat:</p>
+        <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">Pertanyaan Cepat:</p>
         <div id="quickPrompts" class="flex flex-wrap gap-1.5">
           <!-- Populated dynamically -->
         </div>
@@ -570,8 +364,7 @@
       <form onsubmit="handleChatSubmit(event)" class="px-5 py-3 bg-white dark:bg-slate-900 flex items-center gap-2">
         <input id="chatInput" type="text" placeholder="Ketik kebutuhan Anda di sini..." autocomplete="off"
           class="flex-1 bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:border-emerald-500 transition-colors" />
-        <button type="submit"
-          class="px-3.5 py-2.5 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white rounded-xl text-xs font-semibold transition-colors">
+        <button type="submit" class="px-3.5 py-2.5 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white rounded-xl text-xs font-semibold transition-colors">
           Kirim
         </button>
       </form>
@@ -580,10 +373,7 @@
       <div class="px-5 pb-5 pt-1 bg-white dark:bg-slate-900 flex flex-col gap-2">
         <a id="waDirectBtn" href="#" target="_blank" rel="noopener noreferrer"
           class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl text-center shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-            <path
-              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z" />
-          </svg>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
           <span>Lanjut ke WhatsApp via AI Agent</span>
         </a>
       </div>
@@ -591,8 +381,8 @@
   </div>
 
   <script>
-    // NOMOR WHATSAPP UTAMA (Ganti dengan nomor WhatsApp Anda, format 6285729637865)
-    const WA_NUMBER = "6285729637865";
+    // NOMOR WHATSAPP UTAMA (Ganti dengan nomor WhatsApp Anda, format 628xxx)
+    const WA_NUMBER = "628xxxxxxxxxx";
 
     const AGENTS_DATA = {
       prudential: {
@@ -640,32 +430,14 @@
         prompts: ["Kelas Content Creator", "Track Entrepreneur", "Web & Cyber Security"],
         autoReply: "Semua materi dirancang praktis berbasis studi kasus nyata. Klik tombol WhatsApp di bawah untuk mendapatkan akses kurikulum dan jadwal kelas terdekat!"
       },
-      sinar: {
-        name: "Sinar Mutiara Cell AI",
-        division: "Pusat Smartphone, Gadget & Smart TV",
-        initials: "SM",
-        color: "bg-sky-600",
-        greeting: "Halo! Selamat datang di Sinar Mutiara Cell AI. Sedang mencari smartphone terbaru, tukar tambah gadget, atau Smart TV digital untuk rumah & kantor?",
-        prompts: ["Cek Stok & Harga HP", "Tukar Tambah Gadget", "Katalog Smart TV"],
-        autoReply: "Unit bergaransi resmi dengan penawaran harga terbaik! Klik tombol WhatsApp di bawah untuk cek ketersediaan warna dan promo hari ini."
-      },
-      laptop: {
-        name: "Pusat Laptop Nusantara AI",
-        division: "Retail & Pengadaan Laptop New / Second",
-        initials: "PL",
+      exaid: {
+        name: "EXA.ID AI",
+        division: "Digital Agency & IT Solution (Hardware, Software, and Network)",
+        initials: "EX",
         color: "bg-blue-600",
-        greeting: "Halo! Saya spesialis katalog Pusat Laptop Nusantara. Butuh rekomendasi laptop baru atau second berkualitas untuk kuliah, desain, gaming, maupun pengadaan kantor?",
-        prompts: ["Laptop Kuliah / Kerja", "Laptop Second Berkualitas", "Pengadaan Kantor / Sekolah"],
-        autoReply: "Setiap unit telah melalui QC ketat dan bergaransi. Klik tombol WhatsApp di bawah untuk mendapatkan daftar spesifikasi & foto unit yang ready stok."
-      },
-      repair: {
-        name: "IT Repair Hardware AI",
-        division: "Servis Hardware Laptop & Smartphone",
-        initials: "IT",
-        color: "bg-cyan-600",
-        greeting: "Halo! Saya teknisi AI dari IT Repair Hardware. Keluhan apa yang sedang dialami perangkat Anda? (LCD pecah, baterai drop, mati total, lemot, atau upgrade SSD/RAM?)",
-        prompts: ["Estimasi Servis Laptop", "Ganti LCD / Baterai HP", "Upgrade SSD & RAM"],
-        autoReply: "Pengecekan kerusakan transparan dan dikerjakan teknisi berpengalaman. Klik tombol WhatsApp di bawah untuk konsultasi gejala kerusakan & estimasi biaya."
+        greeting: "Halo! Selamat datang di EXA.ID AI. Kami siap membantu kebutuhan Digital Agency & IT Solution terpadu—mulai dari pengembangan Website/Software, pengadaan & perbaikan Hardware, hingga instalasi Network.",
+        prompts: ["Website & Software Custom", "Pengadaan & Servis Hardware", "Instalasi Jaringan & Server"],
+        autoReply: "Tim engineer dan digital strategist EXA.ID siap menyusun proposal teknis maupun estimasi biaya sesuai kebutuhan proyek Anda. Silakan klik tombol WhatsApp di bawah untuk diskusi langsung!"
       }
     };
 
@@ -707,7 +479,7 @@
 
       document.getElementById('modalAgentName').innerText = data.name;
       document.getElementById('modalAgentDiv').innerText = `${data.division} • Online`;
-
+      
       const avatarEl = document.getElementById('modalAvatar');
       avatarEl.innerText = data.initials;
       avatarEl.className = `w-10 h-10 rounded-xl ${data.color} text-white font-bold text-sm flex items-center justify-center shadow-sm`;
@@ -785,7 +557,7 @@
       const baseMsg = userLatestQuery
         ? `Halo ${data.name}, saya ingin konsultasi mengenai *${data.division}*.\n\nTopik/Kebutuhan: "${userLatestQuery}"\n(Dikirim via Han's Agent AI Portal)`
         : `Halo ${data.name}, saya ingin konsultasi mengenai *${data.division}* melalui sistem Han's Agent AI.`;
-
+      
       document.getElementById('waDirectBtn').href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(baseMsg)}`;
     }
 
@@ -806,5 +578,4 @@
     });
   </script>
 </body>
-
 </html>
